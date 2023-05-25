@@ -3,33 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-@font-face {
-    font-family: 'Poppins', sans-serif;
-    src: url(/assets/fonts/Poppins-Medium.ttf);
-    src: url(/assets/fonts/Poppins-Bold.ttf);
-    src: url(/assets/fonts/Poppins-Regular.ttf);
-    src: url(/assets/fonts/Poppins-Light.ttf);
-}
 body {
     font-family: 'Poppins', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
     font-size: 15px;
     font-weight: 400;
     line-height: 28px;
 }
+/* background-image */
+.bg-img{
+    background-image: url(../Images/bg-1.jpg);
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    inset: 0;
+    z-index: -2;
+}
+/* header */
 header > div{
     position: relative;
-}
-.bg-color{
-    position: absolute;
-    z-index: -1;
-    opacity: 0.9;
-    background-color: #24354B;
-    inset: 0;
-}
-.bottom{
-    border-top: 1px rgba(255,255,255,0.07) solid;
 }
 .basic-container {
     margin: 0 auto;
@@ -38,20 +29,17 @@ header > div{
     width: 100%;
     color: white;
     position: relative;
-}
-.top-bar{
-    position: relative;
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: space-between;
     align-items: center;
 }
-.bottom-bar{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: space-between;
-    align-items: center;
-    /* border-top: 1px rgba(255,255,255,0.07) solid; */
+.nav-bg{
+    position: absolute;
+    inset: 0;
+}
+.address i{
+    padding-right: 5px;;
 }
 .social-icons{
     display: flex;
@@ -59,7 +47,7 @@ header > div{
 .social-icons li{
     list-style: none;
 }
-.top-bar .social-icons a {
+.social-icons a {
     width: 50px;
     height: 60px;
     line-height: 60px;
@@ -70,15 +58,27 @@ header > div{
     text-align: center;
     color: inherit;
 }
+.social-icons :nth-child(7) a{
+    padding-left: 30px;
+}
+
+.bottom-bar{
+    border-top: 1px rgba(255,255,255,0.07) solid;
+    box-shadow: 0 10px 50px -12px rgba(171, 171, 171, 0.14);
+}
 nav ul{
     list-style: none;
     display: flex;
     gap: 30px;
-    font-weight: 700;
+    align-items: center;
 }
-nav a{
+nav > ul > li >a{
     text-decoration: none;
     color: inherit;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 90px;
+    font-size: 14px;
 }
 nav a i{
     padding-left: 5px;
