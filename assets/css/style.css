@@ -8,9 +8,14 @@
 }
 /* Damion font */
 @font-face {
-    font-family: "Damion";
+    font-family: 'Damion';
     src: url(../font/Damion/Damion-Regular.ttf);
     font-weight: 400;
+}
+/* Dancing script font */
+@font-face {
+    font-family: 'Dancing Script';
+    src: url(../font/DancingScript/DancingScript-VariableFont_wght.ttf);
 }
 /* Poppins font */
 @font-face {
@@ -64,7 +69,8 @@ a{
     background-color: white;
     color: black !important;
 }
-.rev-btn, .donate-btn, .event-bg-red, .circle-bg{
+.rev-btn, .donate-btn, .event-bg-red, .circle-bg, .sign-up-btn,
+.heart, .border-bottom, .flip-box-wrapper, .post-date, .widget .title::before, .widget .title::after{
     background-color: #bf0a30;
 }
 
@@ -74,6 +80,7 @@ a{
 img{
     max-width: 100%;
     vertical-align: middle;
+    height: auto;
 }
 
 /* background-image */
@@ -166,6 +173,7 @@ nav a i{
     font-weight: 700;
     padding: 10px 23px;
     border-radius: 4px;
+
 }
 /* button */
 .rev-btn{  
@@ -211,7 +219,7 @@ nav a i{
 .container{
     max-width: 1170px;
     margin: 0 auto;
-    padding: 0 15px;  
+    padding: 0 15px;
 }
 .carousel-outer-stage{
     overflow: hidden;
@@ -221,22 +229,15 @@ nav a i{
     position: relative;
     overflow: hidden;
     display: flex;
-    justify-content: center;
-    transform: translate3d(-1173px, 0px, 0px);
-    width: 4692px;
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 1s ease 0s;
 }
 .carousel{
     width: 556.5px;
     margin-right: 30px;
     flex-shrink: 0;
 }
-.event-section{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.event-inner{
+.event-box{
     margin-bottom: 30px;
     border-radius: 10px;
     padding: 35px 30px;
@@ -286,8 +287,9 @@ nav a i{
 .read-more{
     font-weight: 600;
     border-bottom: solid 2px;
+    color: #bf0a30;
 }
-.events .tear-dots{
+.tear-dots{
     text-align: center;
     margin-top: 20px;
 }
@@ -305,9 +307,14 @@ nav a i{
     background: #fff;
     transform: rotate(44deg);
 }
+section{
+    padding: 100px 0;
+}
 .contain{
     display: flex;
-    padding: 100px 0;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 .about{
@@ -340,6 +347,7 @@ nav a i{
 }
 .sub-title{
     font-weight: 700;
+    font-size: 16px;
 }
 .section-title-container{
     margin: 5px 0 35px 0;
@@ -350,12 +358,26 @@ nav a i{
     line-height: 38px;
 }
 .border-bottom{
-    display: block;
     width: 60px;
-    border-bottom: 4px solid #bf0a30;
+    height: 4px;
     border-radius: 50px;
     position: absolute;
     bottom: -28px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+.border-bottom::before{
+    content: "\e648";
+    position: absolute;
+    left: -5px;
+    top: -2px;
+    border-radius: 6px;
+    transform: rotate(2deg);
+    font-family: "themify";
+    font-weight: 900;
+    font-size: 45px;
+    color: #fff;
 }
 .about-text{
     padding: 15px 0 30px 0;
@@ -391,8 +413,313 @@ nav a i{
     position: absolute;
     bottom: 16px;
     right: 18px;
-
 }
+.quote-section-container{
+    background-image: url(../Images/bg-img/bg-1.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.heart{
+    width: 65px;
+    height: 65px;
+    font-size: 25px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-section{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+}
+.quote-section h2{
+    font-size: 42px;
+    line-height: 58px;
+    color: inherit;
+}
+.dancing-texts{
+    font-family: 'Dancing Script';
+    font-size: 25px;
+}
+.ministries-box{
+    box-shadow: rgb(2 2 2 / 6%) 0px 0px 50px;
+    border-radius: 10px;
+    background-color: #fff;
+    border-bottom: solid 4px;
+    margin-bottom: 35px;
+    border-bottom-color: #bf0a30;
+}
+.ministries-box img{
+    border-radius: 10px 10px 0 0;
+}
+.ministries-title{
+    margin-bottom: 70px;
+    text-align: center;
+}
+.border-bottom.center{
+    margin: auto;
+}
+.carousel-outer-stage.mb-0{
+    margin-top: 0;
+}
+
+.ministries-section .carousel{
+    width: 361px;
+    margin-right: 30px;
+}
+.minitries-content{
+    padding: 30px;
+    display: grid;
+    gap: 20px;
+}
+.flip-box-container{
+    position: relative;
+    width: 33.33333333%;
+    text-align: center;
+    margin-top: -115px;
+    
+}
+.flip-box-wrapper{
+    width: 100%;
+    inset: 0;
+    position: absolute;
+    z-index: 0;
+    border-radius: 5px;
+}
+.flip-box{
+    position: relative;
+    z-index: 1;
+    padding: 40px 0 55px 0;
+}
+.flip-box-icon{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.flip-box-title{
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+}
+.flip-box-title::after{
+    content: "";
+    width: 15px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.flip-box-content{
+    display: grid;
+    gap: 20px;
+}
+.contact-form{
+    background-image: url(../Images/bg-img/bg-2.jpg);
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+}
+.contact-form h2{
+    color: inherit;
+    font-size: 28px;
+}
+.contact-form-content{
+    width: 66.66666666%;
+    padding: 0 15px;
+    display: grid;
+    gap: 20px;
+    justify-items: start;
+}
+
+.blog-title{
+    text-align: center;
+    margin-bottom: 70px;
+}
+.blog-section .carousel{
+    width: 358px;
+}
+.blog-content-box{
+    box-shadow: 0px 3px 10px 0px rgb(38 59 94 / 10%);
+    padding: 30px;
+    margin-bottom: 35px;
+}
+.blog-thumb{
+    margin: -30px -30px 0;
+    position: relative;
+}
+.blog-details{
+    padding-top: 30px;
+}
+.blog-details h2{
+    margin-bottom: 10px;
+}
+.post-date{
+    display: inline-block;
+    position: absolute;
+    top: 60%;
+    left: 15px;
+    padding: 0 12px 0 14px;
+    border-radius: 0px 4px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 30px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    z-index: 3;
+    color: #fff;
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+footer{
+    background-image: url(../Images/footer/footer-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.color-overlay{
+    background: rgba(0,22,47,0.92);
+    z-index: 0;
+    position: absolute;
+    inset: 0;
+}
+.footer-section{
+    position: relative;
+    color: #fff;
+}
+.footer-section ul{
+    list-style: none;
+}
+.footer-section .title{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: inherit;
+    padding: 0 0 0 40px;
+    position: relative;
+}
+.widget{
+    width: 25%;
+    padding: 0 15px;
+}
+.social-media-icons a{
+    margin-top: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: var(--b);
+}
+.about-church{
+    font-size: 14px;
+}
+.quick-links ul{
+    display: grid;
+    gap: 18px;
+}
+.widget .title::before{
+    position: absolute;
+    left: 0px;
+    content: "";
+    width: 30px;
+    height: 2px;
+    bottom: 11px;
+}
+.widget .title::after{
+    content: "";
+    width: 1px;
+    height: 15px;
+    position: absolute;
+    bottom: -9px;
+    left: 8px;
+    top: 9px;
+}
+.footer-list-posts > :nth-child(1){
+    padding: 10px 0 22px;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.17) !important;
+    margin-bottom: 13px;
+}
+.footer-list-posts > :nth-child(2){
+    padding-top: 10px;
+}
+.footer-list-posts li{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+.footer-list-posts .side-text a{
+    font-weight: 700;
+}
+.side-text .post-datee{
+    font-size: 13px;
+    font-style: italic;
+    color: #a5a5a5;
+    position: relative;
+}
+.footer-list-posts .side-image img{
+    max-width: 70px;
+    border-radius: 4px;
+}
+.input-form{
+    display: flex;
+    margin-top: 20px;
+}
+.subscribe-form{
+    height: 50px;
+    color: #656363;
+    padding-left: 15px;
+    border: 1px solid #eee;
+    border-right: 0;
+    font-size: 13px;
+    border-radius: 4px 0 0 4px;
+    width: 1%;
+    flex: 1 1 auto;
+    position: relative;
+    z-index: 1;
+}
+.sign-up-btn{
+    color: inherit;
+    border: none;
+    padding: 11px 15px;
+    font-size: 14px;
+    height: 50px;
+    border-radius: 0 4px 4px 0;
+    margin-left: -1px;
+    position: relative;
+    z-index: 0;
+}
+.footer-copyright{
+    padding: 20px 0;
+    background: #000f21;
+    font-size: 13px;
+    color: #fff;
+}
+.footer-copyright .contain{
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1040px){
     header > :nth-child(-1n+2){
         display: none;
