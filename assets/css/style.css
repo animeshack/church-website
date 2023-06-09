@@ -3,6 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+@keyframes verticalMove {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    50% {
+        -webkit-transform: translate(0, 20px);
+        transform: translate(0, 20px);
+    }
+    100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
 :root {
     --b : #dc3545;
 }
@@ -51,6 +65,7 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 700;
     color: #252525;
     font-family: 'Poppins';
+    transition: all 1s ease 0s;
 }
 body{
     font-family: 'Open Sans';
@@ -145,7 +160,8 @@ header > :nth-child(2){
 .social-icons :nth-child(7) a{
     padding-left: 30px;
 }
-.social-icons a:hover{
+.titles:hover, .minitries-content h2:hover, .quick-links li:hover
+,.latest-news a:hover, .blog-details h2:hover, .social-icons a:hover{
     color: var(--b);
 }
 nav{
@@ -187,10 +203,10 @@ nav a i{
     box-shadow: -3px 9px 16px -4px rgb(0 0 0 / 26%);
 }
 .hero-section{
-    min-height: 750px;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 450px;
 }
 .hero-section, .basic-container, .event-time{
     color: #fff;
@@ -198,23 +214,22 @@ nav a i{
 .hero-text{
     display: flex;
     flex-direction: column;
-    gap: 25px;
     align-items: center;
     text-align: center;
     margin-top: 50px;
+    padding: 0 15px;
 }
 .hero-text :nth-child(2){
-    font-size: 21px;
     font-weight: 600;
 }
 .hero-text h1{
     letter-spacing: 3px;
-    font-size: 54px;
     padding-bottom: 10px;
     color: inherit;
+    line-height: 1;
 }
-.hero-text :nth-child(4){
-    font-size: 18px;
+section a, footer a{
+    transition: all 1s ease 0s;
 }
 .container{
     max-width: 1170px;
@@ -223,17 +238,16 @@ nav a i{
 }
 .carousel-outer-stage{
     overflow: hidden;
-    margin-top: -50px;
+    width: 100%;
 }
 .carousel-outer{
     position: relative;
     overflow: hidden;
     display: flex;
     transform: translate3d(0px, 0px, 0px);
-    transition: all 1s ease 0s;
 }
 .carousel{
-    width: 556.5px;
+    width: 48.7%;
     margin-right: 30px;
     flex-shrink: 0;
 }
@@ -263,6 +277,7 @@ nav a i{
     line-height: 30px;
     margin-bottom: 0.5em;
     color: #252525;
+    transition: all 0.3s ease-in-out 0s;
 }
 .event-date i{
     position: absolute;
@@ -288,6 +303,9 @@ nav a i{
     font-weight: 600;
     border-bottom: solid 2px;
     color: #bf0a30;
+}
+.read-more:hover{
+    color: #8d9297;
 }
 .tear-dots{
     text-align: center;
@@ -316,31 +334,21 @@ section{
     position: relative;
     z-index: 1;
 }
-
+.contain>*{
+    width: 100%;
+    flex-shrink: 0;
+}
 .about{
-    width: 50%;
     position: relative;
 }
 .about-img_pattern{
     padding: 0px 63px 0px 0px;
-    position: relative;
     align-self: center;
+    text-align: center;
 }
 .about-img{
     padding: 0px 63px 83px 0px;
     position: relative;    
-}
-.about-img_pattern::before{
-    content: "";
-    background-image: url(../Images/about-us/about-1-bg.png);
-    background-repeat: no-repeat;
-    background-position: -88px -4px;
-    
-    position: absolute;
-    width: 321px;
-    right: 0;
-    bottom: 0;
-    height: 423px;
 }
 .about-us button{
     margin-top: 35px;
@@ -469,7 +477,7 @@ section{
 }
 
 .ministries-section .carousel{
-    width: 361px;
+    width: 31.6%;
     margin-right: 30px;
 }
 .minitries-content{
@@ -479,10 +487,10 @@ section{
 }
 .flip-box-container{
     position: relative;
-    width: 33.33333333%;
     text-align: center;
     margin-top: -115px;
-    
+    animation: verticalMove 3.5s infinite;
+    margin-bottom: 3rem;
 }
 .flip-box-wrapper{
     width: 100%;
@@ -531,7 +539,6 @@ section{
     font-size: 28px;
 }
 .contact-form-content{
-    width: 66.66666666%;
     padding: 0 15px;
     display: grid;
     gap: 20px;
@@ -543,7 +550,7 @@ section{
     margin-bottom: 70px;
 }
 .blog-section .carousel{
-    width: 358px;
+    width: 31.6%;
 }
 .blog-content-box{
     box-shadow: 0px 3px 10px 0px rgb(38 59 94 / 10%);
@@ -581,15 +588,15 @@ footer{
     background-position: center center;
     background-size: cover;
 }
+.footer-section{
+    position: relative;
+    color: #fff;
+}
 .color-overlay{
     background: rgba(0,22,47,0.92);
     z-index: 0;
     position: absolute;
     inset: 0;
-}
-.footer-section{
-    position: relative;
-    color: #fff;
 }
 .footer-section ul{
     list-style: none;
@@ -603,7 +610,6 @@ footer{
     position: relative;
 }
 .widget{
-    width: 25%;
     padding: 0 15px;
 }
 .social-media-icons a{
@@ -683,6 +689,7 @@ footer{
     flex: 1 1 auto;
     position: relative;
     z-index: 1;
+    font: inherit;
 }
 .sign-up-btn{
     color: inherit;
@@ -701,24 +708,98 @@ footer{
     font-size: 13px;
     color: #fff;
 }
-.footer-copyright .contain{
-    justify-content: space-between;
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 767px){
+    .about-img_pattern::before{
+        content: "";
+        background-image: url(../Images/about-us/about-1-bg.png);
+        background-repeat: no-repeat;
+        background-position: -88px -4px;
+        
+        position: absolute;
+        width: 321px;
+        bottom: 0;
+        height: 423px;
+    }
+    .hero-section{
+        min-height: 640px;
+    }
+    .footer-copyright .Copyrights{
+        display: flex;
+        justify-content: space-between;
+    }
+    .hero-text{
+        gap: 10px;
+    }
+    .hero-text :nth-child(4){
+        font-size: 16px;
+    }
+    .hero-text h1{
+        font-size: 44px;
+    }
+    .hero-text :nth-child(2){
+        font-size: 18px;
+    }
+    .event-section{
+        padding-top: 3rem!important;
+    }
+    .hero-text .rev-btn{
+        padding: 10px 30px;
+    }
 }
 
+@media screen and (min-width: 992px){
+    .widget{
+        width: 25%;
+    }
+    .hero-text{
+        gap: 20px;
+    }
+    .hero-text :nth-child(4){
+        font-size: 21px;
+    }  
+    .hero-text h1{
+        font-size: 54px;
+    }  
+    .hero-text :nth-child(2) {
+        font-size: 21px;
+        font-weight: 600;
+    }
+    .hero-text .rev-btn{
+        padding: 15px 35px;
+    }
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (min-width: 1200px){
+    .about{
+        width: 50%;
+    }
+    .flip-box-container{
+        width: 33.33333333%;
+        margin-bottom: 0;
+    }
+    .contact-form-content{
+        width: 66.66666666%;
+    }
+    .hero-section{
+        min-height: 750px;
+    }
+    .carousel-outer-stage{
+        margin-top: -50px;
+    }
+    .event-section{
+        padding-top: 0!important;
+    }
+}
 
 @media screen and (max-width: 1040px){
     header > :nth-child(-1n+2){
@@ -728,15 +809,69 @@ footer{
         display: flex !important;
     }
     .hero-section{
-        display: relative;
+        position: relative;
+    }
+    .carousel{
+        width: 100%;
+    }
+    .ministries-section .carousel{
+        width: 48.4%;
+    }
+    .blog-section .carousel{
+        width: 48.4%;
     }
 }
+@media screen and (max-width: 992px) {
+    .widget{
+        margin-bottom: 35px;
+    }
 
-@media screen and (max-width: 700px){
-    .social-icons{
-        display: none;
-    } 
-    .address{
-        padding: 16px 0;
+}
+@media screen and (max-width: 767px){
+    .about-img, .about-img_pattern{
+        padding: 0 !important;
+    }
+    .about-img{
+        margin-bottom: 3rem;
+    }
+    .footer-copyright{
+        text-align: center;
+    }
+    .blog-section .carousel{
+        width: 100%;
+    }
+    .ministries-section .carousel{
+        width: 100%;
+    }
+    .event-section{
+        padding-top: 4.5rem!important;
+    }
+    img[alt="Dove"]{
+        width: 45px;
+        height: 45px;
+    }
+    .hero-text .rev-btn{
+        padding: 7px 25px;
+    }
+    .hero-text{
+        gap: 10px;
+    }
+    .hero-text :nth-child(4){
+        font-size: 13px;
+    }
+}
+@media (max-width: 450px) {
+    .hero-text :nth-child(2){
+        font-size: 13px;
+    }
+    .img[alt="Dove"]{
+        width: 40px;
+        height: 40px;
+    }
+    .hero-text .rev-btn{
+        font-size: 13px;
+    }
+    .hero-text h1{
+        font-size: 130%;
     }
 }
