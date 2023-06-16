@@ -58,8 +58,9 @@
     src: url(../font/OpenSans/OpenSans-VariableFont_wdth\,wght.ttf);
 }
 
-nav  a:hover, .titles:hover{
+nav li:hover, .titles:hover{
     color: var(--b);
+    cursor: pointer;
 }
 h1, h2, h3, h4, h5, h6{
     font-weight: 700;
@@ -119,9 +120,6 @@ header{
 header > div{
     position: relative;
 }
-header > :nth-child(2){
-    padding: 20px 0;
-}
 .basic-container {
     margin: 0 auto;
     max-width: 1170px;
@@ -170,6 +168,7 @@ header > :nth-child(2){
 nav{
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 nav ul{
     list-style: none;
@@ -181,6 +180,7 @@ nav a{
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 14px;
+    line-height: 100px;
 }
 nav a i{
     padding-left: 5px;
@@ -199,30 +199,48 @@ nav a i{
     height: 70px;
 }
 /* dropdown */
+
 .dropdown {
-    display: none;
-    flex-direction: column;
-    position: absolute;
+    font-family: 'poppins';
+    font-weight: 600;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
     background-color: #fff;
     color: #000f21;
     width: 200px;
     height: auto;
-    /* top: 90px; */
-    align-items: start;
     padding: 10px 10px;
+    align-items: start;
+    transition: all 0.3s ease-in-out 0s;
+    transform: scaleY(0);
+    transform-origin: center top 0;
+}
+.dropdown{
+    position: absolute;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+.dropdown li{
+    border-bottom: solid 1px rgba(245,245,245,1);
+    transition: all 0.3s ease-in-out 0s;
+}
+.dropdown li a{
+    line-height: 30px;
+}
+.dropdown li:hover{
+    padding-left: 5px;
 }
 .nav-dropdown:hover .dropdown {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background-color: #fff;
-    color: #000f21;
-    width: 200px;
-    /* top: 90px; */
-    align-items: start;
-    padding: 10px 10px;
+    display: block;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: scaleY(1);
 }
-/* dorpdown */
+/* dropdown */
 /* button */
 .rev-btn{  
     line-height: 17px;
@@ -262,7 +280,7 @@ nav a i{
 }
 .hero-text p {
     max-width: 500px;
-    font-size: 14px !important;
+    font-size: 14px;
 }
 section a, footer a{
     transition: all 1s ease 0s;
@@ -306,6 +324,7 @@ section a, footer a{
     background: rgba(191,10,48,0.13);
     font-size: 18px;
     flex-shrink: 0;
+    align-self: start;
     text-align: center;
 }
 .titles{
@@ -350,6 +369,9 @@ section a, footer a{
 .tear-dot{
     border: none;
     background: none;
+}
+.tear-dot.disabled{
+    display: none;
 }
 .tear-dot span{
     display: block;
@@ -767,6 +789,7 @@ footer{
     }
     .hero-section{
         min-height: 640px;
+        margin-top: 40px;
     }
     .footer-copyright .Copyrights{
         display: flex;
@@ -855,6 +878,9 @@ footer{
     }
     .blog-section .carousel{
         width: 48.4%;
+    }
+    .tear-dot.disabled{
+    display: inline-block;
     }
 }
 @media screen and (max-width: 992px) {
