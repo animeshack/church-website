@@ -115,7 +115,7 @@ img{
 header{
     position: absolute;
     inset: 0;
-    height: 35%;
+    height: max-content;
 }
 header > div{
     position: relative;
@@ -192,7 +192,7 @@ nav a i{
     font-weight: 700;
     padding: 10px 23px;
     border-radius: 4px;
-
+    position: relative;
 }
 .logo {
     width: 120px;
@@ -208,9 +208,8 @@ nav a i{
     visibility: hidden;
     background-color: #fff;
     color: #000f21;
-    width: 200px;
+    min-width: 300px;
     height: auto;
-    padding: 10px 10px;
     align-items: start;
     transition: all 0.3s ease-in-out 0s;
     transform: scaleY(0);
@@ -224,12 +223,20 @@ nav a i{
     background-color: #fff;
     background-clip: padding-box;
 }
+.dropdown :first-child{
+    padding-top: 10px;
+}
+.dropdown :last-child{
+    border: none;
+    padding-bottom: 10px;
+}
 .dropdown li{
     border-bottom: solid 1px rgba(245,245,245,1);
     transition: all 0.3s ease-in-out 0s;
 }
 .dropdown li a{
-    line-height: 30px;
+    line-height: 40px;
+    padding: 10px 20px;
 }
 .dropdown li:hover{
     padding-left: 5px;
@@ -239,6 +246,11 @@ nav a i{
     visibility: visible !important;
     opacity: 1 !important;
     transform: scaleY(1);
+}
+.btn-bg-hover{
+    position: absolute;
+    background-color: #dfdfdf;
+    inset: 0;
 }
 /* dropdown */
 /* button */
@@ -258,7 +270,7 @@ nav a i{
     align-items: center;
     min-height: 450px;
 }
-.hero-section, .basic-container, .event-time{
+.hero-section, .basic-container, .event-time, .page-title{
     color: #fff;
 }
 .hero-text{
@@ -475,6 +487,9 @@ section{
     border-radius: 50%;
     position: relative;
 }
+.circle-bg:hover{
+    background-color: #212529;
+}
 .circle-bg i{
     position: absolute;
     bottom: 16px;
@@ -522,6 +537,13 @@ section{
 }
 .ministries-box img{
     border-radius: 10px 10px 0 0;
+    transition: all 0.8s ease-in-out 0s;
+}
+.ministries-img-box{
+    overflow: hidden;
+}
+.ministries-img-box img:hover{
+    transform: scale(1.1);
 }
 .ministries-title{
     margin-bottom: 70px;
@@ -652,7 +674,7 @@ footer{
 }
 .color-overlay{
     background: rgba(0,22,47,0.92);
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     inset: 0;
 }
@@ -767,9 +789,55 @@ footer{
     color: #fff;
 }
 
+/* Sermon Grid */
+/* Page title Wrapper */
+#section-header{
+    position: relative;
+}
+#section-header ul{
+    color: #252525;
+}
+.page-title-wrapper{
+    background-image: url(../Images/ministries/childrens_ministry.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    z-index: -2;
+    text-align: center;
+}
+#pageTitleWrapper .page-title-img-icon-container{
+    position: absolute;
+    z-index: 1;
+    inset: 200px 0;
+}
+#pageTitleWrapper .page-title-img-icon{
+    z-index: 1;
+    position: relative;
+}
+#pageTitleWrapper .page-title-img-icon-container::before,
+#pageTitleWrapper .page-title-img-icon-container::after{
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: white;
+    margin: 0 auto;
+    /* top: -50px; */
+}
+#pageTitleWrapper .page-title-img-icon-container::after{
+    border-radius: 45% 50% 50% 0;
+    left: 49.3%;
+}
+#pageTitleWrapper .page-title-img-icon-container::before{
+    border-radius: 50% 45% 0 50%;
+    right: 49.3%;
+}
+#pageTitleWrapper .page-title{
+    font-size: 42px;
+    line-height: 1.3;
 
-
-
+}
 
 
 
