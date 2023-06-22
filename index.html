@@ -70,36 +70,46 @@
                             <a href="#">HOME<i class="fa fa-plus" aria-hidden="true"></i></a>
                         </li>
                         <li class="nav-dropdown">
-                            <a href="#">Programs<i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <a href="#">PROGRAMMES<i class="fa fa-plus" aria-hidden="true"></i></a>
                             <ul class="dropdown">
-                                <li>Sunday</li>
-                                <li>Wednesday</li>
-                                <li>Fridays</li>
+                                <li><a href="#">Sunday</a></li>
+                                <li><a href="#">Wednesday</a></li>
+                                <li><a href="#">Fridays</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#">TESTIMONY<i class="fa fa-plus" aria-hidden="true"></i></a>
                         </li>
-                        <li>
+                        <li class="nav-dropdown">
                             <a href="#">MINISTRIES<i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Childrens Ministry</a></li>
+                                <li><a href="#">Family Ministry</a></li>
+                                <li><a href="#">Womens Ministry</a></li>
+                                <li><a href="#">Music Ministry</a></li>
+                                <li><a href="#">Prison Ministry</a></li>
+                            </ul>
                         </li>
-                        <li>
+                        <li class="nav-dropdown">
                             <a href="#">BLOG<i class="fa fa-plus" aria-hidden="true"></i></a>
                         </li>
                         <li>
                             <a href="#">CONTACT US</a>
                         </li>
                     </ul>
-                    <button class="donate-btn">DONATE</button>
+                    <button class="donate-btn">
+                        <div class="btn-bg-hover"></div>
+                        DONATE
+                    </button>
                 </nav>
             </div>
         </div>
-        <div class="mobile-header basic-container">
-            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
-            <img src="./assets/Images/logo.png" class="logo" alt="Logo" width="100" height="45">
-            <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-        </div>
     </header>
+    <div class="mobile-header basic-container">
+        <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+        <img src="./assets/Images/logo.png" class="logo" alt="Logo" width="100" height="45">
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+    </div>
     <div class="hero-section">
         <img src="./slider-plugins/assets/zmain-slider-1-1536x864.jpg" alt="people holding hands" class="bg-img">
         <div class="hero-text">
@@ -161,7 +171,7 @@
                         <div class="carousel">
                             <div class="event-section">
                                 <div class="event-box">
-                                    <div class="media theme-color-main">
+                                    <div class="media theme-color-date">
                                         <div class="event-date">
                                             <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
                                             Mar 3
@@ -205,6 +215,12 @@
                         <span></span>
                     </button>
                     <button class="tear-dot">
+                        <span></span>
+                    </button>
+                    <button class="tear-dot disabled">
+                        <span></span>
+                    </button>
+                    <button class="tear-dot disabled">
                         <span></span>
                     </button>
                 </div>
@@ -263,7 +279,7 @@
     <section class="ministries-section">
         <div class="container">
             <div class="ministries-title section-title-container">
-                <p class="sub-title theme-color-main">MINISTRIES</p>
+                <p class="sub-title theme-color-date">MINISTRIES</p>
                 <h2 class="section-title">Our Ministries</h2>
                 <span class="border-bottom center"></span>
             </div>
@@ -271,7 +287,11 @@
                 <div class="carousel-outer">
                     <div class="carousel">
                         <div class="ministries-box">
-                            <img src="./assets/Images/ministries/childrens_ministry.jpg">
+                            <div class="ministries-img-box">
+                                <a href="#">
+                                    <img src="./assets/Images/ministries/childrens_ministry.jpg">
+                                </a>
+                            </div>
                             <div class="minitries-content">
                                 <a href="#">
                                     <h2>Children's Ministry</h2>
@@ -285,7 +305,11 @@
                     </div>
                     <div class="carousel">
                         <div class="ministries-box">
-                            <img src="./assets/Images/ministries/women_ministry.jpg">
+                            <div class="ministries-img-box">
+                                <a href="#">
+                                    <img src="./assets/Images/ministries/women_ministry.jpg">
+                                </a>
+                            </div>
                             <div class="minitries-content">
                                 <a href="">
                                     <h2>Womens Ministry</h2>
@@ -299,7 +323,11 @@
                     </div>
                     <div class="carousel">
                         <div class="ministries-box">
-                            <img src="./assets/Images/ministries/global_ministry.jpg">
+                            <div class="ministries-img-box">
+                                <a href="#">
+                                    <img src="./assets/Images/ministries/global_ministry.jpg">
+                                </a>
+                            </div>
                             <div class="minitries-content">
                                 <a href="#">
                                     <h2>Global Ministry</h2>
@@ -313,7 +341,11 @@
                     </div>
                     <div class="carousel">
                         <div class="ministries-box">
-                            <img src="./assets/Images/ministries/music_ministry.jpg">
+                            <div class="ministries-img-box">
+                                <a href="#">
+                                    <img src="./assets/Images/ministries/music_ministry.jpg">
+                                </a>
+                            </div>
                             <div class="minitries-content">
                                 <a href="#">
                                     <h2>Music Ministry</h2>
