@@ -85,8 +85,10 @@ a{
     background-color: white;
     color: black !important;
 }
-.rev-btn, .donate-btn, .event-bg-red, .circle-bg, .sign-up-btn, .sermon-playlist span a, .btn-readMore,
-.heart, .border-bottom, .flip-box-wrapper, .post-date, .widget .title::before, .widget .title::after{
+.rev-btn, .donate-btn, .event-bg-red,
+.circle-bg, .sign-up-btn, .sermon-playlist span a, .btn-readMore,
+.heart, .border-bottom, .flip-box-wrapper, .post-date, .widget .title::before,
+.widget .title::after, .sermon-view-wrapper{
     background-color: #5b65e2;
 }
 
@@ -270,7 +272,7 @@ nav a i{
     align-items: center;
     min-height: 450px;
 }
-.hero-section, .basic-container, .event-time, .page-title{
+.hero-section, .basic-container, .event-time, .page-title, #sermonDetails .sermon-name{
     color: #fff;
 }
 .hero-text{
@@ -406,7 +408,7 @@ section{
 .contain>*{
     width: 100%;
     padding: 0 15px;
-    flex: 0 0 auto;
+    flex-grow: 1;
 }
 .about{
     position: relative;
@@ -682,7 +684,7 @@ footer{
     position: absolute;
     inset: 0;
 }
-.footer-section ul{
+ul{
     list-style: none;
 }
 .footer-section .title{
@@ -862,6 +864,7 @@ footer{
 .sermon-playlist{
     text-align: center;
     margin-top: -30px;
+    color: #fff;
 }
 .sermon-playlist span a{
     width: 45px;
@@ -872,24 +875,20 @@ footer{
     line-height: 45px;
     border-radius: 6px;
     margin-bottom: 4px;
-    color: #fff;
+    color: inherit;
     margin-right: 4px;
 }
 .sermon-name{
     font-size: 21px;
     line-height: 30px;
 }
-.sermon-info li{
-    font-size: 13px;
-}
 .sermon-info ul > :nth-child(2), .sermon-info ul > :last-child{
     display: inline;
     padding-right: 20px;
 }
-.sermon-info ul{
+#sectionSermon .sermon-info ul{
+    font-size: 13px;
     list-style: none;
-}
-.sermon-info{
     font-style: italic;
 }
 .btn-readMore{
@@ -906,7 +905,55 @@ footer{
     cursor: pointer;
 }
 
-
+/* Sermon-Details */
+#sermonDetails .sermon-thumb{
+    margin: 0;
+}
+#sermonDetails img{
+    border-radius: 10px;
+}
+.sermon-view-wrapper{
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 50px;
+    margin-top: -70px;
+    margin-bottom: 40px;
+}
+#sermonDetails .sermon-info{
+    margin-bottom: 15px;
+}
+#sermonDetails .sermon-info ul li{
+    padding: 0;
+    display: inline;
+    margin-right: 10px;
+}
+#sermonDetails .sermon-name{
+    margin-bottom: 20px;
+}
+#sermonDetails .sermon-playlist span a{
+    background-color: #fff;
+}
+#sermonDetails .sermon-playlist{
+    margin: 0;
+    text-align: unset;
+    color: #212529;
+}
+#sermonDetails .contain > .contain{
+    padding: 0;
+}
+.sermon-view-wrapper .contain > :nth-child(2){
+    text-align: right;
+}
+#sermonDetails p{
+    margin-bottom: 15px;
+}
+.sermon-sub-title{
+    margin: 30px 0 15px;
+    font-size: 28px;
+    line-height: 36px;
+}
 
 
 @media screen and (min-width: 767px){
@@ -949,6 +996,13 @@ footer{
     }
     .sermon-box{
         width: 33.333333%;
+    }
+    .sermon-view-wrapper_child{
+        width: 50%;
+    }
+    .img-width-50{
+        width: 50%;
+        margin-top: 20px;
     }
 }
 
