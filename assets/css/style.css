@@ -515,6 +515,7 @@ section{
     background-image: url(../Images/bg-img/bg-1.jpg);
     background-size: cover;
     background-position: center center;
+    position: relative;
 }
 .heart{
     width: 65px;
@@ -949,7 +950,7 @@ ul{
     text-align: unset;
     color: #212529;
 }
-.sermon-detail .contain, #eventDetails .contain{
+.sermon-detail .contain, #eventDetails .contain, #gallerySection .contain{
     margin: 0 -15px;
 }
 .sermon-view-wrapper .contain > :nth-child(2){
@@ -1252,6 +1253,88 @@ textarea:focus, input:focus{
     margin-bottom: 20px;
 }
 
+/* Gallery-section */
+#gallerySection .media{
+    padding: 30px;
+    box-shadow: 1px 2px 20px 0px rgb(230 230 230 / 80%);
+}
+#gallerySection .gallery-zoom{
+    margin-bottom: 3rem;
+}
+#gallerySection .media-thumb img{
+    max-width: 180px;
+    height: auto;
+}
+#gallerySection .media-body h4{
+    padding-bottom: 10px;
+}
+#gallerySection .color-overlay{
+    opacity: 0.6;
+}
+#gallerySection .quote-section-container{
+    background-image: url(../Images/portfolio/video-bg.jpg);
+    z-index: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.portfolio-meta-wrap{
+    padding: 35px;
+    background-color: #5b65e2;
+    height: max-content;
+    border-radius: 5px;
+}
+.portfolio-meta-title-wrap>*{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: none;
+    line-height: 24px;
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: #dee2e6;
+}
+.portfolio-meta-title-wrap{
+    display: inline-block;
+    margin-right: 15px;
+}
+.portfolio-meta-list>li > span, .portfolio-meta-list>li a{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #fff;
+}
+.portfolio-meta-title-wrap .portfolio-meta-icon {
+    margin-right: 10px;
+}
+.portfolio-meta-wrap .entry-category,
+.portfolio-meta-wrap .entry-category ul li,
+.portfolio-meta-wrap .entry-tags, .portfolio-meta-wrap .entry-tags ul li{
+    display: inline-block;
+}
+.portfolio-meta-list>li .social-icons {
+    display: inline-block;
+}
+.portfolio-meta-list>li {
+    margin-bottom: 15px;
+}
+.portfolio-meta-list>li .social-icons a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+#gallerySection .social-icons.small.icons-circle a > span {
+    background: #fff;
+    display: inline-block;
+    color: #000;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+
 @media screen and (min-width: 767px){
     .about-img_pattern::before{
         content: "";
@@ -1346,7 +1429,7 @@ textarea:focus, input:focus{
     .contact-form_side-image{
         width: 33.3333333%;
     }
-    .sermon-list-item-wrapper{
+    .sermon-list-item-wrapper, .portfolio-info-wrap{
         width: 66.66666%;
     }
     .side-bar{
@@ -1355,7 +1438,7 @@ textarea:focus, input:focus{
 }
 
 @media screen and (min-width: 1200px){
-    .about{
+    .about, .portfolio-info-wrap .media-wrapper{
         width: 50%;
     }
     .flip-box-container{
