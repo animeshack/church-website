@@ -1277,6 +1277,9 @@ textarea:focus, input:focus{
     border-radius: 10px;
     overflow: hidden;
 }
+.portfolio-info-wrap > :nth-child(n){
+    margin-bottom: 30px !important;
+}
 .portfolio-meta-wrap{
     padding: 35px;
     background-color: #5b65e2;
